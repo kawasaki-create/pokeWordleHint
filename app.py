@@ -1,6 +1,6 @@
 # 必要モジュールインポート
 from flask import Flask, render_template, request, redirect
-from numpy import void
+from numpy import result_type, void
 from sqlalchemy import null
 import scraping
 import re
@@ -23,26 +23,20 @@ def run_scraping():
     all5 = scraping.scraping()
 
     result = []
-    if pokename1 != null:
+    if pokename1 == "":
+        result.append('名前を入力してください')
+    else:
         for i in all5:
             if pokename1 in i:
-                result.append(i)
-    if pokename2 != null:
-        for i in all5:
-            if pokename2 in i:
-                result.append(i)
-    if pokename3 != null:
-        for i in all5:
-            if pokename3 in i:
-                result.append(i)
-    if pokename4 != null:
-        for i in all5:
-            if pokename4 in i:
-                result.append(i)
-    if pokename5 != null:
-        for i in all5:
-            if pokename5 in i:
-                result.append(i)
+                if pokename2 in i:
+                    if pokename3 in i:
+                        if pokename4 in i:
+                            if pokename5 in i:
+                                result.append(i)
+                else:
+                    if result == "":
+                        return('そのポケモンはいません')
+                    
 
 
     return render_template('result.html', result=result)
