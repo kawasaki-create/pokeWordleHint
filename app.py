@@ -1,9 +1,6 @@
 # 必要モジュールインポート
 from flask import Flask, render_template, request, redirect
-from numpy import result_type, void
-from sqlalchemy import null
 import scraping
-import re
 
 app = Flask(__name__)
 
