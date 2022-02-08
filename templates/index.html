@@ -1,8 +1,23 @@
 {% extends 'base.html' %}
 
 {% block body %}
-<h1>くら寿司10皿ガチャ</h1>
-<form method="GET" action="/scraping">
-    <button type="submit">ガチャを回す</button>
+<h1>ポケモン名前判定</h1>
+<form method="POST" action="/scraping">
+    <input type="text" placeholder="使われた名前を入力してください" name="pokename1 pokename">
+    <input type="text" placeholder="使われた名前を入力してください" name="pokename2 pokename">
+    <input type="text" placeholder="使われた名前を入力してください" name="pokename3 pokename">
+    <input type="text" placeholder="使われた名前を入力してください" name="pokename4 pokename">
+    <input type="text" placeholder="使われた名前を入力してください" name="pokename5 pokename">
+    <br>
+    <br>
+    <div>
+        <label for="r1">文字位置完全一致：</label>
+        <input type="radio" id="r1" name="radio r1" value="文字位置完全一致">
+    </div>
+    <div>
+        <label for="r1">あいまい検索：</label>
+        <input type="radio" id="r2" name="radio r2" value="あいまい検索">
+    </div>
+    <button type="submit">検索</button>
 </form>
 {% endblock %}
