@@ -1,14 +1,19 @@
 {% extends 'base.html' %}
 
 {% block body %}
-<h1>ポケモン名前判定</h1>
+<h1 style="font-size: 2rem; border: 5px double skyblue;">ポケモン名前判定</h1>
+<p>フォームに1文字ずつ入力してください。</p>
+<p>最初の1マスは入力必須です。</p>
 <form method="POST" action="/scraping">
-    <input type="text" placeholder="1文字入力" name="pokename1">
-    <input type="text" placeholder="1文字入力" name="pokename2">
-    <input type="text" placeholder="1文字入力" name="pokename3">
-    <input type="text" placeholder="1文字入力" name="pokename4">
-    <input type="text" placeholder="1文字入力" name="pokename5">
+    <input style="width: 30px;" type="text" name="pokename1" maxlength="1">
+    <input style="width: 30px;" type="text" name="pokename2" maxlength="1">
+    <input style="width: 30px;" type="text" name="pokename3" maxlength="1">
+    <input style="width: 30px;" type="text" name="pokename4" maxlength="1">
+    <input style="width: 30px;" type="text" name="pokename5" maxlength="1">
+    <br>
     <br>
     <button type="submit">検索</button>
 </form>
+    <br>
+    <button type="button" class="btn btn-success"><a href="https://portfolio.kawasaki-create.com/" style="color: snow;">かわさきポートフォリオに戻る</a></button>
 {% endblock %}
