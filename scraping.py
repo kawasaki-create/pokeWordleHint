@@ -26,6 +26,3 @@ def scraping():
             pokeArray.append(row.getText())
 
     return pokeArray
-
-    
-    
